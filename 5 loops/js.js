@@ -46,3 +46,33 @@ if (samoglasnici.includes(name[0])) {
 if(name[0] == "a" || name[1] == "e" || name[2] == "i" || name[3] == "o" || name[4] == "u") {
     console.log("da pocinje");
 }
+
+
+//petlje / loopovi ->
+let cars = ["bmw", "audi", "mercedes","toyota", "honda","MG", "peugeot", "renault", "honda"];
+console.log(cars);
+
+// koje petlje postoje -> for, forEach, while, do while, for in, for of
+// forEach i for in su najabitnije
+// for, while, do while -> nekada.
+
+// for petlja
+// nesto sto nabraja stvari
+
+// prvi argument u njoj je -> odakle krece, od cega krece
+// zasto stavljamo i? - nebitno je kako cemo je nazvati naziv i, ali zasto i -> ona se smatra jednom iteracijom
+// tj. jednom ponavljanjem, petlje bukvalno i jesu ponavljanje. U sustini govorimo joj da ponovi nesto 100 puta (ako ide do 100)
+// i<100 -> je uslov do kada ce petlja da radi
+// i++ -> znaci, nakon svakog ponavljanja povecaj i za jedan, let i = 0, to jeste manje od 100, tako da u sledecoj
+// povecaj za jedan, pa ce biti let i = 1, to jeste manje od 100. dok ne stigne do 99
+
+
+for(let i = 0; i < 100; i++) {
+    console.log(i);
+}
+
+// vezba 5.22 koliko automobila imamo toliki broj stavi kao uslo u cika petlju
+
+for(let i = 0; i < cars.length; i++){
+    console.log(cars[i], + i);
+}
