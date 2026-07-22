@@ -34,6 +34,16 @@ let brojsoba = [
 ]
 
 
+let realestates = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+]
+
 
 let options = document.querySelector(".svigradovi")
 
@@ -65,19 +75,55 @@ for (sobe of brojsoba) {
 
 
 //dodajemo eventlistener
+// javna / globalna varijabla - radi svuda
+// ona unutar funkcije radi samo u funkciji 
+//valjda je to resenjje ovoga 
+// bravo smekeru imas kefala - barem malo... 
+let promena;
 
-let dugme = document.querySelector("#button")
-dugme.addEventListener("click", function() {
-    console.log("test");
-    event.preventDefault();
-})
 
 //npravi event listener na select / option kad izaberemo neki drugi
 
 let gradic = document.querySelector(".svigradovi");
 gradic.addEventListener("change", function(e) {
-    let promena = e.currentTarget.value;
-    console.log(promena);
+    promena = e.currentTarget.value;
+        event.preventDefault();
 })
 
 //vezba 9.16 tu smo stali
+
+
+//vezba 9.18 odradi isto sto si i za 9.16 samo druga polja
+
+
+//globalne
+let brojsobica; //za broj soba
+let tipici; //za tip oglasa
+
+//uzeli smo dropdown-e vec 
+/***
+ * let type = document.querySelector(".tip");
+let nor = document.querySelector(".brojsoba");
+ */
+
+type.addEventListener("change", function(t) {
+    
+    tipici = t.currentTarget.value;
+})
+
+
+nor.addEventListener("change", function(b) {
+   
+    brojsobica = b.currentTarget.value;
+})
+
+
+//updatujemo button da postuje sve sto smo izabrali
+
+let dugme = document.querySelector("#button")
+dugme.addEventListener("click", function() {
+   
+    console.log("Izabrali ste: " + promena, tipici, brojsobica)
+    event.preventDefault();
+    
+})
