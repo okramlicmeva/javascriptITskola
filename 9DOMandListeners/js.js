@@ -34,14 +34,56 @@ let brojsoba = [
 ]
 
 
-let realestates = [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+let realEstates = [
+    {
+        city:"Beograd",
+        option: "Garsonjera",
+        type: "Stanovi",
+        price:48200,
+        size: 25,
+    },
+    {
+        city:"Novi Sad",
+        option: null,
+        type: "Kuca",
+        price: 120000,
+        size: 85,
+    },
+      {
+        city: "Sarajevo",
+        option: "Trosoban stan",
+        type: "Stanovi",
+        price: 135000,
+        size: 78,
+    },
+     {
+        city: "Zagreb",
+        option: "Dvoiposoban stan",
+        type: "Stanovi",
+        price: 185000,
+        size: 66,
+    },
+     {
+        city: "Podgorica",
+        option: "Cetvorosoban stan",
+        type: "Stanovi",
+        price: 240000,
+        size: 118,
+    },
+      {
+        city: "Zagreb",
+        option: "Jednoiposoban stan",
+        type: "Stanovi",
+        price: 142000,
+        size: 48,
+    },
+     {
+        city: "Subotica",
+        option: "Dvosoban stan",
+        type: "Stanovi",
+        price: 67000,
+        size: 54,
+    }
 ]
 
 
@@ -127,3 +169,9 @@ dugme.addEventListener("click", function() {
     event.preventDefault();
     
 })
+
+
+
+for (let estate of realEstates) {
+    console.log(estate.option)
+}
