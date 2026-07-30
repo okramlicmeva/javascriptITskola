@@ -1,0 +1,24 @@
+.hidden {
+    display:none;
+}
+
+#estates {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.svaki {
+    width:25%;
+    height:auto;
+    background-color:#a09696;
+    padding:2px;
+    margin:2px;
+
+}
+
+
+.svaki * {
+    padding-left:15px;
+}
