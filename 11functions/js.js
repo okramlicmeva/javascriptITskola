@@ -54,7 +54,11 @@ if (age >= 18) {
 }
 }
 
-isAdult(15)
+
+let marko = 31; // referencira tomu, i ne moramo menjati svuda taj broj
+
+
+isAdult(marko)
 isAdult(18)
 isAdult(20)
 
@@ -62,3 +66,13 @@ isAdult(20)
 //imenuj funckije po onome sto rade
 // na osnovu onoga sto rade 
 // 
+
+// funkcije mogu imati veliki broj parametara, argumenata
+
+function writeFullName(firstName, lastName) {
+ console.log(firstName +" "+ lastName)
+}
+
+writeFullName("Marko", "Malevic");
+
+// nema domaceg zadatka
