@@ -80,47 +80,10 @@ function reset() {
 
 
 
-/*
-canvas.addEventListener("click", function(event){
-
-let rect = canvas.getBoundingClientRect()
-let x = event.clientX - rect.left;
-let y = event.clientY - rect.top;
-console.log(numbers);
-
-clickPoints.push({x : x, y : y});
-console.log(clickPoints);
-
-if (clickPoints.length >= numbers){
-
-canvasLine.beginPath();
-canvasLine.moveTo(clickPoints[0].x, clickPoints[0].y)
-
-
-
-for (let cor in clickPoints){
-    if (cor == 0){
-        continue;
-
-    }
-    canvasLine.lineTo(clickPoints[cor].x, clickPoints[cor].y)
-    canvasLine.lineTo(clickPoints[cor].x, clickPoints[cor].y)
-    canvasLine.lineTo(clickPoints[cor].x, clickPoints[cor].y)
-    canvasLine.lineTo(clickPoints[cor].x, clickPoints[cor].y)
-}
-canvasLine.stroke();
-
-    clickPoints = [];
-}
-
-})
-
-*/
-
 //domaci 13.20
 // dodaj dugme koje ce da ti nacrta kad zavrsis sveukupno kliktanje - event listenr na canvas da broji klikove? novi? valjda?
 // dodaj dugme koji ce da clean-uje sve - u sustini po mom mislsjenju clickPoints = [] se desi kad kliknes dugme reset..  sto znaci clickpoints je event listener sa funkcijom?hmmm
-// 
+// opet sam zeznuo github - mora da sam ekstermno glup-hub 
 
 
 
