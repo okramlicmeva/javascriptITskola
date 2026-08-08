@@ -32,12 +32,12 @@ let numbers = 0; //posle gledanja resenja - nemam pojma zasto sam ja mislio da j
 canvas.addEventListener("click", racunaj);
 
 function racunaj() {
-    numbers++;
+    let b = numbers++;
     let rect = canvas.getBoundingClientRect()
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
     clickPoints.push({x : x, y : y});
-    
+    console.log(b)
 }
 
 
@@ -47,9 +47,9 @@ function racunaj() {
 nacrtaj.addEventListener("click", primeni);
 
 function primeni() {
-console.log(numbers); // ocigledno ne radi
+console.log(numbers); // radi
     if (clickPoints.length >= numbers){
-        console.log(numbers); // ni ovde ne radi
+        console.log(numbers); // radi
     canvasLine.beginPath();
     canvasLine.moveTo(clickPoints[0].x, clickPoints[0].y)
 
