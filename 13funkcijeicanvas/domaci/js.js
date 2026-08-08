@@ -28,7 +28,7 @@ let canvas = document.getElementById("drawArea");
 let nacrtaj = document.querySelector("#nacrtaj");
 let resetuj = document.querySelector("#resetuj");
 let canvasLine = canvas.getContext("2d");
-let numbers = 0;
+let numbers = 0; //posle gledanja resenja - nemam pojma zasto sam ja mislio da je ovo potrebno
 canvas.addEventListener("click", racunaj);
 
 function racunaj() {
@@ -37,17 +37,19 @@ function racunaj() {
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
     clickPoints.push({x : x, y : y});
+    
 }
 
-console.log(numbers);
+
 
 
 
 nacrtaj.addEventListener("click", primeni);
 
 function primeni() {
-
+console.log(numbers); // ocigledno ne radi
     if (clickPoints.length >= numbers){
+        console.log(numbers); // ni ovde ne radi
     canvasLine.beginPath();
     canvasLine.moveTo(clickPoints[0].x, clickPoints[0].y)
 
@@ -65,7 +67,15 @@ function primeni() {
 }
 canvasLine.stroke();
 clickPoints = [];
-numbers = 0; // mora da pocnemo od nule, da ne bi nastavio da crta od poslednje tacke gde je stao -> ako je to cilj, ima smisla i jedno i drugo. 
+numbers = 0; // mora da pocnemo od nule, u suprotnom nastavlja da broji u beskonacno.. (ovo mu dodje kao limiter)
+// ali je nepotrebno....
+// ne razumem zasto je moja logika pogresna, i zasto sam ocigledno pokusao da iskomplikumem stvari ovde..  
+// moja vizija je bila - ok imam jedan event listener koji broji svaki klik
+// taj klik treba da primeni u funkciji primeni -> kako ne bih menjao kod tj da bi if naastavio da radi, jer ima svoj limitr prema broju klikova
+// i onda na kraju reset dugme koje resetuje.. 
+// ovo me malo obeshrabljuje.. 
+//  STA SAM POGRESNO URADIO I ZASTO?
+// SVE RADI - ALI OCIGLEDNO NE ONAKO KAKO SAM ZAMISLIO? 
 }
 }
 
