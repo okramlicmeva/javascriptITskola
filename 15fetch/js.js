@@ -60,33 +60,50 @@ let response = fetch("https://dummyjson.com/test") // on je napravio ovaj poziv 
 
 
 let productsEle = document.getElementById("allProducts");
-fetch("https://dummyjson.com/products?limit=20&sortBy=price&order=desc")
-.then(function(response) {
+let fetchURL = "https://dummyjson.com/products";
+let customSearch;
+let searchText = document.querySelector("#searchField");
+let searchBtn = document.querySelector("#searchButton");
+searchBtn.addEventListener("click", collect)
+console.log(searchBtn)
+console.log(searchText);
+
+
+//jedina stvar koja me kopa je ta sto nemamo unapred display prozivoda, vec praznu listu koja radi samo onda kada search-ujemo nesto
+// u real life scenariju to ne bi bilo tako, vec bi imao prozivode, pa bi onda trazio u zavisnosti gde si na strani. (gigatron kao primer);
+// zadatak -> kada ponovo searchujes nemoj da nadodaje -> neko obrise to sto je pokazao i priikaze samo nove rezultat.. 
+     // mora da je neka fora kod prikazivanja, znaci mora da isprazni all products, pa da doda nove products po kljucnoj reci - morao sam da ispraznim div 
+     
+
+
+function collect(){
+    productsEle.replaceChildren();
+    customSearch = fetchURL+"/search?q="+searchText.value;
+    console.log(customSearch)
+    fetch(customSearch)
+    .then(function(response) {
     console.log(response);
     return response.json()
 })
-.then (function(data){
-    
-console.log(data)
-// a = data.products;
-// console.log(a);
+    .then (function(data){
+    console.log(data)
 
-// for (products of a) {
-//     console.log("Title is: " +  products.title, "Category is :" + products.category);
-// }
-// nije moralo ovako, moglo je i na sledeci nacin ispod
-
-
-//vezbva 15.13 ispisati sve prozivode i categorije unutar jednog diva koji vec imamo napraljen. 
 
 for (let productes of data.products) {
-   
     appendProductToDiv(productes);
-   
-    
 }
 
 })
+
+}
+
+
+
+
+
+
+
+// fetch("https://dummyjson.com/products?limit=20&sortBy=price&order=desc")
 
 
 function appendProductToDiv(productes){
@@ -108,3 +125,5 @@ function appendProductToDiv(productes){
 //zadatak 2 -> api vraca dvadeset podataka, sortiranih po ceni od najvise ka najnizoj. 
 
 //domaci -> pretraga -> input polje u koje unosimo tekst -> kliknem pretrazi i koristi njihov api kako bi pretrazio taj odredjeni prozivod. 
+
+
