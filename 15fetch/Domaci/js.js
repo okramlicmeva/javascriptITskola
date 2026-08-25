@@ -18,6 +18,21 @@ console.log(searchText);
      
 
 
+     fetch(fetchURL)
+    .then(function(response) {
+    console.log(response);
+    return response.json()
+})
+    .then (function(data){
+    console.log(data)
+
+
+for (let productes of data.products) {
+    appendProductToDiv(productes);
+}
+
+})
+
 
 
 function collect(){
