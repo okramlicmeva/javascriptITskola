@@ -22,7 +22,7 @@ fetch("https://dummyjson.com/recipes?limit=9&sortBy=name&order=asc")
 
     for(recipes of data.recipes) {
         createAllrecipes(recipes)
-        console.log(recipes);
+        
     }
 });
 
@@ -31,6 +31,23 @@ fetch("https://dummyjson.com/recipes/tags")
 .then(function(tags){
 buildTagSelector(tags);
 })
+// vezba 5 -> prikazi recepte po selektoru 
+
+selektor.addEventListener("change", function() {
+    console.log(this.value);
+    let apiUrl = "https://dummyjson.com/recipes/tag/"+this.value;
+    fetch(apiUrl)
+    .then(response => response.json())
+    .then(function(data) {
+        console.log(data);
+        allRecipes.innerHTML = "";
+        console.log(data.recipes);
+        for (let recipes of data.recipes) {
+            createAllrecipes(recipes)
+        }
+    })
+})
+
 
 
 function createAllrecipes(recipes) {
@@ -44,7 +61,7 @@ function createAllrecipes(recipes) {
     //prep = document.createElement("p") // ja sam ovo unapred odradio kroz jednu funkciju, druga vezba kaze da ovo mora posebno
 
     names.textContent = recipes.name;
-    preptime.textContent = recipes.prepTimeMinutes;
+    preptime.textContent ="Prep time in minutes: " + recipes.prepTimeMinutes;
     ingredients.textContent = recipes.ingredients;
     // prep.textContent = recipes.instructions; // ja sam ovo unapred odradio kroz jednu funkciju, druga vezba kaze da ovo mora posebno
 
