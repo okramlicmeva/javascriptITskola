@@ -70,7 +70,11 @@ function createAllrecipes(recipes) {
     preptime.classList.add("preptime");
     ingredients.classList.add("ingredients");
 
-    singleRecipes.append(names, preptime, ingredients, cookingInstructions); // ovde kroz cookinInstructions (koji je funkcija) -> pravimo ul i apendujemo u jedan prozvod
+    let permaLinkElem = document.createElement("a");
+    permaLinkElem.textContent = "Show Recipe";
+    permaLinkElem.href = "permalink.html?id="+recipes.id;
+
+    singleRecipes.append(names, preptime, ingredients, cookingInstructions, permaLinkElem); // ovde kroz cookinInstructions (koji je funkcija) -> pravimo ul i apendujemo u jedan prozvod
     allRecipes.append(singleRecipes);
 
 }
