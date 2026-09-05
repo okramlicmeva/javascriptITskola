@@ -43,7 +43,7 @@ if(names.value.trim() === "" || surname.value.trim() === "") {
 }
 
 register(names.value, surname.value, age.value);
-
+document.createElement("button").inner
 })
 
 
