@@ -73,3 +73,4 @@ resultDiv.append(kartica);
 
 //Update:
 //nakon gledanja resanja -> fali error handling neke vrste -> ako se unese pogresno ime filma, ili neki glupi tekst (to sam mozda moga i da predvidim)
+// trebao sam igleda i async da stavim na event listener -ali ne razumem zasto. 
