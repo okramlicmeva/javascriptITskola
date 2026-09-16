@@ -69,3 +69,7 @@ resultDiv.append(kartica);
 }
 
 //that should be it my dude
+
+
+//Update:
+//nakon gledanja resanja -> fali error handling neke vrste -> ako se unese pogresno ime filma, ili neki glupi tekst (to sam mozda moga i da predvidim)
