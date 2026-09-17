@@ -1,0 +1,92 @@
+* {
+    margin:0;
+    padding:0;
+
+}
+
+
+body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchSection {
+    width:70%;
+    height:100px;
+    display:flex;
+    justify-content: center;
+    gap:20px;
+    padding:20px;
+  
+   
+}
+
+#search {
+    border:none;
+    width:100px;
+    height:50px;
+    border-radius:30px;
+    text-transform: uppercase;
+}
+
+#search:hover {
+    background-color:silver;
+    transition-duration: 0.5s;
+}
+
+.title {
+    outline:none;
+    border:none;
+    background-color:rgb(180, 180, 180);
+    height:50px;
+    border-radius:30px;
+    text-align: center;
+    color:white;
+}
+
+.title::placeholder {
+    color:white;
+    text-transform: uppercase;
+}
+
+.title:focus::placeholder {
+    opacity:0;
+}
+
+.movieResults {
+    width:70%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
+ 
+}
+
+
+.movieCard {
+    width:160px;
+    border-radius:20px;
+    display:flex;
+    flex-direction: column;
+    margin:10px;
+   text-align:center;
+   transition-duration: 0.5s;
+}
+
+.movieCard:hover {
+    
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+
+.movieImage {
+    border-radius:20px;
+    
+}
+
+.movieTitle {
+    padding-top:5px;
+   font-weight: bold;
+}
