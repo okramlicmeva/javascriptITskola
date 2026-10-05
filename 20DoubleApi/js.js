@@ -1,6 +1,6 @@
 const mealDbApi = "https://themealdb.com/api/json/v1/1/";
 const getCategoryDetails = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
-
+const getfullmealdetailsurl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
 const response = await fetch(mealDbApi+"categories.php")
 const data = await response.json()
 
@@ -37,7 +37,8 @@ categorieSelector.addEventListener("change", async ()=> {
         let minirecipes = document.createElement("div");
         minirecipes.className = "minidivs";
        
-        console.log(meals);
+       
+        console.log(meals.idMeal);
         let img = document.createElement("img");
         let title = document.createElement("h5");
         let country = document.createElement("p");
@@ -53,6 +54,18 @@ categorieSelector.addEventListener("change", async ()=> {
 
         
         container.append(minirecipes)
+
+      minirecipes.addEventListener("click", async () => {
+          let getfullmealdetails = await fetch(getfullmealdetailsurl+meals.idMeal)
+          let responses = await getfullmealdetails.json();
+          let popic = document.getElementById("popup");
+          let mealtext = document.getElementById("mealdetails");
+          mealtext.innerHTML = responses.meals[0].strInstructions;
+          popic.append(mealtext);
+          popic.style.display ="block";
+      });
+
+
     }
     
   
@@ -61,6 +74,10 @@ categorieSelector.addEventListener("change", async ()=> {
    
 })
 
+
+document.querySelector(".close").addEventListener("click", () => {
+  document.getElementById("popup").style.display = "none";
+})
 
 //vezba kad kliknes tj izaberes odredjenu kategoriju da ti recepte --> koristi recept api. nek ispise 
 
@@ -77,4 +94,15 @@ let filterByCaregory = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Sea
 //     container.append(minirecipes);
 
     
+// }
+
+// async function popup(meals) {
+  
+//   let getfullmealdetails = await fetch(getfullmealdetailsurl+meals.idMeal)
+//   let responses = await getfullmealdetails.json();
+//   let popic = document.getElementById("popup");
+//   let mealtext = document.getElementById("mealdetails");
+//   mealtext.innerHTML = responses.meals[0].strInstructions;
+//   popic.append(mealtext);
+//   popic.style.display ="block";
 // }
