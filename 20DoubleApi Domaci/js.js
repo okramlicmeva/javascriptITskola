@@ -1,4 +1,5 @@
 const mealDbApi = "https://themealdb.com/api/json/v1/1/";
+const coctailDbApi = "https://www.thecocktaildb.com/api/json/v1/1/";
 const getCategoryDetails = "https://www.themealdb.com/api/json/v1/1/filter.php?c="
 const getfullmealdetailsurl = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="
 const response = await fetch(mealDbApi+"categories.php")
@@ -8,7 +9,7 @@ const data = await getMealDbData("categories.php")
 let categorieSelector = document.querySelector("#categories");
 let container = document.querySelector("#container");
 // console.log(categorieSelector);
-
+//random.php -> coctaildb
 
 renderOptions(data)
 
@@ -61,6 +62,12 @@ categorieSelector.addEventListener("change", async ()=> {
       minirecipes.addEventListener("click", async () => {
           // let getfullmealdetails = await fetch(getfullmealdetailsurl+meals.idMeal)
           let responses = await getMealDbData("lookup.php?i="+meals.idMeal)
+          let coctailresponse = await fetch(coctailDbApi+"random.php");
+          let data = await coctailresponse.json()
+          let coctailtitle = document.getElementById("coctailtitle");
+          coctailtitle.innerHTML ="Coctail Suggestion: " + data.drinks[0].strDrink
+          console.log(data);
+          console.log(data)
           let popic = document.getElementById("popup");
           let mealtext = document.querySelector("#mealdetails");
           console.log(mealtext);
