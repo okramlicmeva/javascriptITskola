@@ -118,10 +118,6 @@ function showDivs(meals) {
 }
 
 
-//vezba kad kliknes tj izaberes odredjenu kategoriju da ti recepte --> koristi recept api. nek ispise 
-
-
-//filter by category
 
 let filterByCaregory = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood";
 
