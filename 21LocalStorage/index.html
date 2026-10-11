@@ -6,14 +6,17 @@
     <title>Local Storage</title>
 </head>
 <body>
-    <form id="form">
+    <form id="form" style="display:none">
         <input id="username" type="text" placeholder="unesite vase ime">
         <input id="password" type="password" placeholder="unesite vasu sifru">
         <button id="loginbtn" type="button">Uloguj se</button>
     </form>
 
-    <button id="logout">Logout</button>
 
+    <div id="loggedInData" style="display:none">
+    <button id="logout">Logout</button>
+    <a href="tasks.html">My tasks</a>
+</div>
     <script type="module" src="js.js"></script>
 </body>
 </html>

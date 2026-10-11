@@ -8,6 +8,7 @@
     let form = document.getElementById("form");
     let logoutbtn = document.getElementById("logout")
     let loggedIn = localStorage.getItem("loggedIn");
+    let loggedInData = document.getElementById("loggedInData")
 
 
     logoutbtn.addEventListener("click", () => {
@@ -20,9 +21,7 @@
   if (loggedIn === null) {
     form.style.display = "block"
   } else {
-  
-    form.style.display = "none"
-    logoutbtn.style.display = "block";
+    loggedInData.style.display = "block";
   }
 
 loginbtn.addEventListener("click", () => {
